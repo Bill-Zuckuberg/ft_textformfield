@@ -95,7 +95,7 @@ class _TextFormFieldExampleState extends State<TextFormFieldExamble> {
             child: TextFormField(
               decoration: const InputDecoration(
                   border: UnderlineInputBorder(),
-                  filled: false,
+                  filled: true,
                   icon: Icon(Icons.email),
                   hintText: "Your email address",
                   labelText: "Email"),
@@ -148,6 +148,21 @@ class _TextFormFieldExampleState extends State<TextFormFieldExamble> {
                 this._password = value;
               });
             },
+          ),
+          const SizedBox(
+            height: 24,
+          ),
+          // "Re-type password" form
+          Material(
+            child: TextFormField(
+              // enabled: this._password != null && this._password!.isEmpty,
+              decoration: const InputDecoration(
+                  border: UnderlineInputBorder(),
+                  filled: true,
+                  labelText: "Re-type password"),
+              maxLength: 8,
+              obscureText: true,
+            ),
           )
         ],
       ),
